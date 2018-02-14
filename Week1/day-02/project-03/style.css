@@ -1,0 +1,11 @@
+body{
+    margin: 10% 20% 0% 20%;
+    text-align: center;
+}
+
+hgroup{
+    background-image:url("anakin.png");
+    margin: 10%;
+    background-position: center;
+    background-repeat: repeat;
+}
