@@ -2,7 +2,6 @@
 - [Myself](https://github.com/Isshae)
 
 ## Repos
-
 - [hello world](https://github.com/Isshae/hello-world)
 - [patchwork](https://github.com/Isshae/patchwork)
 - [git lesson repository](https://github.com/Isshae/git-lesson-repository)
