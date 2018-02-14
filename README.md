@@ -8,5 +8,8 @@
 - [git lesson repository](https://github.com/Isshae/git-lesson-repository)
 - [isshae.github.io](https://github.com/Isshae/isshae.github.io)
 
-## First Webpage
-- [Greg Vajtai-Szellak](https://isshae.github.io/)
+## [BeCool](https://github.com/greenfox-academy/becool-syllabus) 
+
+
+## [First Webpage](https://isshae.github.io/)
+
