@@ -1,7 +1,7 @@
 # Welcome on my Repo!
 - [Myself](https://github.com/Isshae)
 
-## Links
+## Repos
 
 - [hello world](https://github.com/Isshae/hello-world)
 - [patchwork](https://github.com/Isshae/patchwork)
