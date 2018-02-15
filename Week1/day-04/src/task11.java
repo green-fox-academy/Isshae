@@ -87,7 +87,10 @@ public class task11 {
 
         String k = "Apple";
         //fill the k variable with its cotnent 4 times
+        for (int i = 0; i <2 ; i++) {
+            k=k+k;
+        }
 
-        System.out.println(k+k+k+k);
+        System.out.println(k);
     }
 }
