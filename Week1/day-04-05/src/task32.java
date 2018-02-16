@@ -19,31 +19,16 @@ public class task32 {
 
         int num = sc.nextInt();
         for (int i = 1; i <= num; i++) {
-            for (int j = 1; j <=num ; j++) {
-                if (i==j){
+            for (int j = 1; j <= num; j++) {
+                if (i == j) {
                     System.out.print("%");
-                }else if (i==1 || i==num || j==1 || j==num){
-                    System.out.print("%");
-                }else{
-                    System.out.print(" ");
-                }
-
-            }
-            System.out.println();
-        }
-
-        /* for (int r = 1; r <= rows; r++) {
-            for (int c = 1; c <= rows; c++) {
-                if (c == r) {
-                    System.out.print("%");
-                } else if (r == 1 || r == rows || c == 1 || c == rows) {
+                } else if (i == 1 || i == num || j == 1 || j == num) {
                     System.out.print("%");
                 } else {
                     System.out.print(" ");
                 }
-
             }
-            System.out.println();*/
-
+            System.out.println();
         }
     }
+}
