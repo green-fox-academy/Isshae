@@ -14,10 +14,11 @@ public class task33 {
         Scanner sc = new Scanner(System.in);
         Random rm=new Random();
 
-        int num = 9;
+
+        int num = rm.nextInt(100)+1;
         int guessed = 0;
         while (guessed != num) {
-            System.out.println("Guess the Number!");
+            System.out.println("Guess the Number berween 0-100!");
             guessed = sc.nextInt();
             if (guessed > num) {
                 System.out.println("The stored number is lower");
@@ -28,7 +29,8 @@ public class task33 {
                 System.out.println();
 
             } else {
-                System.out.println("You found the number: 9");
+                System.out.println("You found the number: "+num);
+                num = rm.nextInt(100)+1;
             }
         }
     }
