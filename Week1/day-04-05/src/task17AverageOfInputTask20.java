@@ -32,12 +32,13 @@ public class task17AverageOfInputTask20 {
             sum = sum + array[i];
             avg = (double) sum / array.length;
             if (array[i] > array[max]){
-                max=array[i];
+
+                array[max]=array[i];
             }
         }
 
-        System.out.println(sum);
-        System.out.println(avg);
-        System.out.println(array[max]);
+        System.out.println("sum: "+sum);
+        System.out.println("avg: "+avg);
+        System.out.println("max: "+array[max]);
     }
 }
