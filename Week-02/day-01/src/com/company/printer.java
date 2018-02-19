@@ -25,17 +25,17 @@ public class printer {
 
             System.out.println(arg);
         }
-/*
+
 
     String[] param={"cat","dog", "bird"};
 
-    printer(param);
+    printer(param[1]);
 
 
     }
-    public static void printer(String[] a){
+    public static void print(String[] a){
         for (int i = 0; i <a.length ; i++) {
             System.out.print(a[i]+", ");
-        }*/
+        }
     }
 }
