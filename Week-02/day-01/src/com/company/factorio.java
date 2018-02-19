@@ -16,7 +16,7 @@ public class factorio {
     public static int factorio(int a){
         int factorio=1;
         for (int i = 1; i <=a ; i++) {
-            factorio=i*factorio;
+            factorio*=i;
         }
         return factorio;
     }

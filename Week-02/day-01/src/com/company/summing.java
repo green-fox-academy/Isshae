@@ -19,7 +19,7 @@ public class summing {
     public static int sum(int a) {
         int sum = 0;
         for (int i = 1; i <= a; i++) {
-            sum = sum + i;
+            sum+=i;
 
         }
         return sum;
