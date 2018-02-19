@@ -31,7 +31,7 @@ public class printer {
 
     printer(param);
 
-        System.out.println(param[0]);
+
     }
     public static void printer(String[] a){
         for (int i = 0; i <a.length ; i++) {
