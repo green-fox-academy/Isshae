@@ -30,6 +30,7 @@ public class matrix {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (i == j)
                     matrix[i][j] = 1;
+
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
