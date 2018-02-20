@@ -20,7 +20,7 @@ public class matchmaking {
         int counter = 0;
         for (int i = 0; i < boys.size(); i++) {
             if (girls.size() <= counter) {
-                girls.add(null);
+                girls.add("nincs par");
 
             }
             together.add(boys.get(i) + " " + girls.get(i));
