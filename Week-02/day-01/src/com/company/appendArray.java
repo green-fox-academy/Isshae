@@ -13,7 +13,6 @@ public class appendArray {
             System.out.println(nimals[i]+" ");
         }
 
-
     }
     public static String addingString(String a){
  String additional="a";
