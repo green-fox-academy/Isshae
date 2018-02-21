@@ -6,21 +6,28 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class purpleSteps3D {
+public class checkerBoard {
     public static void mainDraw(Graphics graphics) {
-        // Reproduce this:
-        // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
+        // Fill the canvas with a checkerboard pattern.
 
-        int size = 30;
-        int x = 30;
-        int y = 30;
-        for (int i = 0; i < 6; i++) {
-            graphics.setColor(Color.blue);
+        int size = 50;
+        int x = 0;
+        int y = 0;
+        for (int row = 0; row < 8; row++) {
 
-            graphics.fillRect(x, y, size, size);
-            x = x + size;
-            y = y + size;
-            size += 10;
+            for (int column = 0; column < 8; column++) {
+                x = size * column;
+                y = size * row;
+                if ((row % 2) == (column % 2)) {
+                    graphics.setColor(Color.white);
+                } else {
+                    graphics.setColor(Color.black);
+                }
+                graphics.fillRect(x, y, size, size);
+
+
+            }
+
         }
 
     }
