@@ -7,23 +7,23 @@ import java.util.Random;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class rainbowBoxes {
+public class purpleSteps {
     public static void mainDraw(Graphics graphics) {
-        // Create a square drawing function that takes 2 parameters:
-        // The square size, and the fill color,
-        // and draws a square of that size and color to the center of the canvas.
-        // Create a loop that fills the canvas with rainbow colored squares.
+        // Reproduce this:
+        // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
+Color color=new Color(0,0,0);
+int size=30;
+int x=30;
+int y=30;
+        for (int i = 0; i <10 ; i++) {
+            graphics.setColor(colorRandomizer(color));
+            graphics.fillRect(x,y,size,size);
+            x+=30;
+            y+=30;
 
-
-        int squareSize = 10;
-
-        Color color = new Color(0, 0, 0);
-
-
-        squareDraw(squareSize, colorRandomizer(color), graphics);
+        }
 
     }
-
     private static Color colorRandomizer(Color color) {
         Random random = new Random();
         int r = random.nextInt(256);
@@ -33,19 +33,6 @@ public class rainbowBoxes {
 
 
         return randomColor;
-    }
-
-    private static void squareDraw(int squareSize, Color color, Graphics graphics) {
-
-        for (int firstBox = 0; firstBox < 1; firstBox++) {
-            graphics.setColor(colorRandomizer(color));
-            graphics.drawRect(((WIDTH / 2) - (squareSize / 2)), ((HEIGHT / 2) - (squareSize / 2)), squareSize, squareSize);
-            for (int secondBoxes = 0; secondBoxes < WIDTH; secondBoxes++) {
-                graphics.setColor(colorRandomizer(color));
-                graphics.drawRect(((WIDTH / 2) - (squareSize / 2)), ((HEIGHT / 2) - (squareSize / 2)), squareSize, squareSize);
-                squareSize++;
-            }
-        }
     }
 
     // Don't touch the code below
