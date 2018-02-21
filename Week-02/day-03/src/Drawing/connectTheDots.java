@@ -30,7 +30,7 @@ public class connectTheDots {
         int y = 0;
 
         for (int i = 0; i < box.length; i++) {
-       
+
             }
 
         }
