@@ -21,11 +21,10 @@ public class findPartOfAnInteger {
 
         List<Integer> innerList = new ArrayList<Integer>();
 
-        for (int element = 0; element < ints.length ; element++) {
+        for (int element = 0; element < ints.length; element++) {
             if (Integer.toString(ints[element]).contains(Integer.toString(i))) {
                 innerList.add(ints[element]);
             }
-
         }
         return innerList;
     }
