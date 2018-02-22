@@ -27,7 +27,7 @@ public class findSubStringInList {
                 break;
             }
         }
-        
+
         if (index > 0) {
             return index;
         } else {
