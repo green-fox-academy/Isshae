@@ -17,18 +17,16 @@ public class rainbowBoxes {
 
         int squareSize = 10;
 
-        Color color = new Color(0, 0, 0);
-
-
-        squareDraw(squareSize, colorRandomizer(color), graphics);
+        squareDraw(squareSize, colorRandomizer(), graphics);
 
     }
 
-    private static Color colorRandomizer(Color color) {
+    private static Color colorRandomizer() {
         Random random = new Random();
-        int r = random.nextInt(256);
-        int g = random.nextInt(256);
-        int b = random.nextInt(256);
+        int colorRange = 256;
+        int r = random.nextInt(colorRange);
+        int g = random.nextInt(colorRange);
+        int b = random.nextInt(colorRange);
         Color randomColor = new Color(r, g, b);
 
 
@@ -38,10 +36,10 @@ public class rainbowBoxes {
     private static void squareDraw(int squareSize, Color color, Graphics graphics) {
 
         for (int firstBox = 0; firstBox < 1; firstBox++) {
-            graphics.setColor(colorRandomizer(color));
+            graphics.setColor(colorRandomizer());
             graphics.drawRect(((WIDTH / 2) - (squareSize / 2)), ((HEIGHT / 2) - (squareSize / 2)), squareSize, squareSize);
             for (int secondBoxes = 0; secondBoxes < WIDTH; secondBoxes++) {
-                graphics.setColor(colorRandomizer(color));
+                graphics.setColor(colorRandomizer());
                 graphics.drawRect(((WIDTH / 2) - (squareSize / 2)), ((HEIGHT / 2) - (squareSize / 2)), squareSize, squareSize);
                 squareSize++;
             }
