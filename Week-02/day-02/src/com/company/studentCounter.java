@@ -13,7 +13,7 @@ public class studentCounter {
         Map<String, Object> row0 = new HashMap<String, Object>();
         row0.put("name", "Rezso");
         row0.put("age", 9.5);
-        row0.put("candies", 2);
+        row0.put("candies", "2");
         map.add(row0);
 
         Map<String, Object> row1 = new HashMap<String, Object>();
@@ -43,14 +43,14 @@ public class studentCounter {
         Map<String, Object> row5 = new HashMap<String, Object>();
         row5.put("name", "Teodor");
         row5.put("age", 3);
-        row5.put("candies", 2);
+        row5.put("candies", "5");
         map.add(row5);
-
-        // Display the following things:
-        //  - Who has got more candies than 4 candies
         //  - Sum the age of people who have lass than 5 candies
+        // Display the following things:
+
+        //  - Who has got more candies than 4 candies
         double sum = 0.0;
-        for (int i = 0; i < map.size() - 1; i++) {
+        for (int i = 0; i < map.size() ; i++) {
             int candies = Integer.parseInt(map.get(i).get("candies").toString());
             if (candies > 4) {
                 System.out.print(map.get(i).get("name") + ", ");
