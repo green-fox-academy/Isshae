@@ -21,7 +21,7 @@ public class writeSingleLine {
 String name="Vajtai-Syellak Gergely";
 
     try {
-      
+
       Files.write(path1, name.getBytes(), StandardOpenOption.WRITE);
       System.out.print(Files.readAllLines(path1));
 
