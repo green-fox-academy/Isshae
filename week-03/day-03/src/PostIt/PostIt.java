@@ -1,7 +1,7 @@
-package PostIt;
+package postIt;
 
 public class PostIt {
-  /*Create a PostIt class that has
+  /*Create a postIt class that has
 a backgroundColor
 a text on it
 a textColor
