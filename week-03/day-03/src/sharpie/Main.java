@@ -9,6 +9,8 @@ Every sharpie is created with a default 100 as inkAmount
 We can use() the sharpie objects
 which decreases inkAmount*/
 
-
+    Sharpie blackSharpie = new Sharpie("black", 4.32f);
+    blackSharpie.use();
+    System.out.println(blackSharpie.inkAmount);
   }
 }
