@@ -22,32 +22,26 @@ public class decryptDouble {
     String fileName = "duplicated-chars.txt";
     List<String> dectrypted = new ArrayList<String>();
     ArrayList<Character> chars = new ArrayList<>();
-    ArrayList<String> strings = new ArrayList<>();
     StringBuilder builder = new StringBuilder(chars.size());
     try {
       Scanner scanner = new Scanner(new File(fileName));
       while (scanner.hasNext()) {
         dectrypted.add(scanner.next());
-
       }
- 
-      for (int i = 0; i < dectrypted.size(); i++) {
+      for (int i = 0; i <dectrypted.toString().length() ; i++) {
         chars.add(dectrypted.toString().charAt(i));
-
       }
       for (int i = 0; i < chars.size(); i++) {
         chars.remove(i);
-
       }
-
-      for (Character ch : chars) {
+      for(Character ch: chars)
+      {
         builder.append(ch);
       }
-
     } catch (IOException IOEx) {
       System.err.println("Something went wrong!");
     }
 
-    return chars.toString();
+    return builder.toString().replace(',',' ');
   }
 }
