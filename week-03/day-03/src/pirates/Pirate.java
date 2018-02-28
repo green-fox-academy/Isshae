@@ -17,6 +17,7 @@ else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and 
 
   private int drunkLevel;
   private boolean isDead;
+  private String rank;
   private String name;
   private String pourMe = "Pour me anudder!";
   private String imPirate = "Arghh, I'ma Pirate. How d'ya d'ink its goin?";
@@ -26,6 +27,7 @@ else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and 
   this.name=name;
     drunkLevel = 0;
     isDead = false;
+    rank="Private";
   }
 
   public void drinkSomeRum() {
@@ -83,5 +85,13 @@ else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and 
 
   public String getName() {
     return name;
+  }
+
+  public void setRank(String rank) {
+    this.rank = rank;
+  }
+
+  public void setDrunkLevel(int drunkLevel) {
+    this.drunkLevel = drunkLevel;
   }
 }

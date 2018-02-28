@@ -1,8 +1,10 @@
 package pirates;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
-public class Ship  {
+public class Ship {
   /*Create a pirates.Ship class.
 The pirates.Ship stores Pirate-s instances in a list as the crew and has one captain who is also a Pirate.
 When a ship is created it doesn't have a crew or a captain.
@@ -17,27 +19,37 @@ the ship should win if its calculated score is higher
 calculate score: Number of Alive pirates in the crew - Number of consumed rum by the captain
 The loser crew has a random number of losses (deaths).
 The winner captain and crew has a party, including a random number of rum :)*/
+  public String[] Beginning = {"Kr", "Ca", "Ra", "Mrok", "Cru",
+          "Ray", "Bre", "Zed", "Drak", "Mor", "Jag", "Mer", "Jar", "Mjol",
+          "Zork", "Mad", "Cry", "Zur", "Creo", "Azak", "Azur", "Rei", "Cro",
+          "Mar", "Luk"};
+  public String[] Middle = {"air", "ir", "mi", "sor", "mee", "clo",
+          "red", "cra", "ark", "arc", "miri", "lori", "cres", "mur", "zer",
+          "marac", "zoir", "slamar", "salmar", "urak"};
+  public String[] End = {"d", "ed", "ark", "arc", "es", "er", "der",
+          "tron", "med", "ure", "zur", "cred", "mur"};
 
+  public Random random = new Random();
 
+  List<Pirate> crew=new ArrayList<>();
 
-    private static String[] Beginning = {"Kr", "Ca", "Ra", "Mrok", "Cru",
-            "Ray", "Bre", "Zed", "Drak", "Mor", "Jag", "Mer", "Jar", "Mjol",
-            "Zork", "Mad", "Cry", "Zur", "Creo", "Azak", "Azur", "Rei", "Cro",
-            "Mar", "Luk"};
-    private static String[] Middle = {"air", "ir", "mi", "sor", "mee", "clo",
-            "red", "cra", "ark", "arc", "miri", "lori", "cres", "mur", "zer",
-            "marac", "zoir", "slamar", "salmar", "urak"};
-    private static String[] End = {"d", "ed", "ark", "arc", "es", "er", "der",
-            "tron", "med", "ure", "zur", "cred", "mur"};
-
-    private static Random rand = new Random();
-
-    public static String generateName() {
-
-      return Beginning[rand.nextInt(Beginning.length)] +
-              Middle[rand.nextInt(Middle.length)] +
-              End[rand.nextInt(End.length)];
+  public void fillShip(Ship ship){
+   int shipCrew=random.nextInt(30)+6;
+    for (int i = 0; i <shipCrew ; i++) {
+      crew.add(new Pirate(generateName()));
+      crew.get(i).setDrunkLevel(random.nextInt(4)+1);
+      if (i==shipCrew){
+        crew.get(i).setRank("Captain");
+      }
     }
-
-  
   }
+
+  public String generateName() {
+
+    return Beginning[random.nextInt(Beginning.length)] +
+            Middle[random.nextInt(Middle.length)] +
+            End[random.nextInt(End.length)];
+  }
+
+
+}
