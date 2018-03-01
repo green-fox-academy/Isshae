@@ -14,7 +14,6 @@ public class DrawingFractals {
   private static void mainDraw(Graphics graphics) {
     int x0 = WIDTH / 2;
     int y0 = HEIGHT - 50;
-
     double angle = 0;
 
     drawTree(graphics, x0, y0, length, angle);
@@ -30,8 +29,8 @@ public class DrawingFractals {
       graphics.setColor(colorRandomizer());
       graphics.drawLine(x0, y0, x1, y1);
 
-      drawTree(graphics, x1, y1, length - 6, angle + 30);
-      drawTree(graphics, x1, y1, length - 6, angle - 30);
+      drawTree(graphics, x1, y1, length - 6, angle + 25);
+      drawTree(graphics, x1, y1, length - 6, angle - 25);
       drawTree(graphics, x1, y1, length - 6, angle);
     }
   }
@@ -85,7 +84,10 @@ public class DrawingFractals {
   static class ImagePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics graphics) {
+
       super.paintComponent(graphics);
+      Graphics2D g2=(Graphics2D) graphics;
+      g2.setStroke(new BasicStroke(iterator/2));
       mainDraw(graphics);
     }
   }
