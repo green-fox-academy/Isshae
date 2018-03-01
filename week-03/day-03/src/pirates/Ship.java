@@ -11,7 +11,7 @@ When a ship is created it doesn't have a crew or a captain.
 The ship can be filled with pirates and a captain via fillShip() method.
 Filling the ship with a captain and random number of pirates.
 Ships should be represented in a nice way on command line including information about
-captains consumed rum, state (passed out / died)
+captains consumed rum, state (passed out / died) MODOSITANI A toString METODUSAT!!!
 number of alive pirates in the crew
 Ships should have a method to battle other ships: ship.battle(otherShip)
 should return true if the actual ship (this) wins
@@ -33,12 +33,12 @@ The winner captain and crew has a party, including a random number of rum :)*/
 
   List<Pirate> crew=new ArrayList<>();
 
-  public void fillShip(Ship ship){
+  public void fillShip(){
    int shipCrew=random.nextInt(30)+6;
     for (int i = 0; i <shipCrew ; i++) {
       crew.add(new Pirate(generateName()));
       crew.get(i).setDrunkLevel(random.nextInt(4)+1);
-      if (i==shipCrew){
+      if (i==shipCrew-1){
         crew.get(i).setRank("Captain");
       }
     }
