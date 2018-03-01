@@ -8,7 +8,7 @@ public class DrawingFractals {
 
   static int WIDTH = 600;
   static int HEIGHT = 600;
-  static int iterator = 0;
+  static int iterator = 1;
   static double length = 60;
 
   private static void mainDraw(Graphics graphics) {
@@ -21,11 +21,9 @@ public class DrawingFractals {
   }
 
   private static void drawTree(Graphics graphics, int x0, int y0, double length, double angle) {
-    if (length == 0) {
+    if (length <= 60 - (iterator * 6)) {
       return;
     } else {
-
-
       int x1 = ((int) (x0 + length * Math.sin(Math.toRadians(angle))));
       int y1 = ((int) (y0 - length * Math.cos(Math.toRadians(angle))));
 
@@ -65,12 +63,22 @@ public class DrawingFractals {
     jFrame.setVisible(true);
     imagePanel.setBackground(Color.black);
 
-    while (iterator <= 15) {
+    boolean isSwitch = true;
+    while (true) {
+      if (iterator == 10) {
+  isSwitch=false;
+      }else if (iterator==0){
+        isSwitch=true;
+      }
+      if (isSwitch){
+        iterator++;
+      }else{
+        iterator--;
+      }
 
       imagePanel.repaint();
+      Thread.sleep(300-(iterator*10));
 
-      Thread.sleep(100);
-      iterator++;
     }
   }
 
