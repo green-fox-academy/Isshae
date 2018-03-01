@@ -5,14 +5,14 @@ public class Bunny {
 
     int bunny = 10;
     int ears = 2;
-    System.out.println(earstogether(bunny, ears));
+    System.out.println(earstogether(bunny));
   }
 
-  private static int earstogether(int bunny, int ears) {
+  private static int earstogether(int bunny) {
     if (bunny == 0) {
-      return bunny;
+      return 0;
     } else {
-      return ears + earstogether(bunny - 1, ears);
+      return 2 + earstogether(bunny - 1);
     }
 
   }

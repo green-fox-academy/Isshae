@@ -11,19 +11,15 @@ public class BunniesAgain {
   }
 
   private static int earsAgain(int bunnies) {
-    int ears = 0;
-    if (bunnies % 2 == 0) {
-      ears = 3;
-    } else {
-      ears = 2;
-    }
     if (bunnies == 0) {
       return bunnies;
-
     } else {
-
-      return ears +earsAgain(bunnies - 1);
+      int ears = bunnies % 2 == 0 ? 3 : 2;
+      return ears + earsAgain(bunnies - 1);
     }
+
+
   }
 }
+
 
