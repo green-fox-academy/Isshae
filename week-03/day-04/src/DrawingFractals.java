@@ -5,10 +5,16 @@ import java.util.Random;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class DrawingFractals {
+
+  static int WIDTH = 600;
+  static int HEIGHT = 600;
+  static int iterator = 0;
+  static double length = 60;
+
   private static void mainDraw(Graphics graphics) {
     int x0 = WIDTH / 2;
-    int y0 = HEIGHT-50;
-    double length = 60;
+    int y0 = HEIGHT - 50;
+
     double angle = 0;
 
     drawTree(graphics, x0, y0, length, angle);
@@ -18,6 +24,8 @@ public class DrawingFractals {
     if (length == 0) {
       return;
     } else {
+
+
       int x1 = ((int) (x0 + length * Math.sin(Math.toRadians(angle))));
       int y1 = ((int) (y0 - length * Math.cos(Math.toRadians(angle))));
 
@@ -26,20 +34,8 @@ public class DrawingFractals {
 
       drawTree(graphics, x1, y1, length - 6, angle + 30);
       drawTree(graphics, x1, y1, length - 6, angle - 30);
+      drawTree(graphics, x1, y1, length - 6, angle);
     }
-  }
-
-  // Don't touch the code below
-  static int WIDTH = 600;
-  static int HEIGHT = 600;
-
-  public static void main(String[] args) {
-    JFrame jFrame = new JFrame("Drawing");
-    jFrame.setSize(new Dimension(WIDTH, HEIGHT));
-    jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-    jFrame.add(new ImagePanel());
-    jFrame.setLocationRelativeTo(null);
-    jFrame.setVisible(true);
   }
 
   private static Color colorRandomizer() {
@@ -52,6 +48,30 @@ public class DrawingFractals {
 
 
     return randomColor;
+  }
+
+
+  // Don't touch the code below
+
+
+  public static void main(String[] args) throws InterruptedException {
+    JFrame jFrame = new JFrame("My beautiful picture");
+    ImagePanel imagePanel = new ImagePanel();
+
+    jFrame.setSize(new Dimension(WIDTH, HEIGHT));
+    jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    jFrame.add(imagePanel);
+    jFrame.setLocationRelativeTo(null);
+    jFrame.setVisible(true);
+    imagePanel.setBackground(Color.black);
+
+    while (iterator <= 15) {
+
+      imagePanel.repaint();
+
+      Thread.sleep(100);
+      iterator++;
+    }
   }
 
   static class ImagePanel extends JPanel {
