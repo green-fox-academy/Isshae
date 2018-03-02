@@ -24,10 +24,10 @@ else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and 
   private String dead = "I'm dead";
 
   public Pirate(String name) {
-  this.name=name;
+    this.name = name;
     drunkLevel = 0;
     isDead = false;
-    rank="Private";
+    rank = "Sea rat";
   }
 
   public void drinkSomeRum() {
@@ -43,29 +43,31 @@ else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and 
       System.out.println(dead);
 
     } else {
-     if (0 < drunkLevel && drunkLevel <= 4) {
+      if (0 < drunkLevel && drunkLevel <= 4) {
         System.out.println(pourMe);
       } else {
         System.out.println(imPirate);
       }
     }
   }
-  public void die(){
-    isDead=true;
+
+  public void die() {
+    isDead = true;
   }
-  public void brawl(Pirate pirate){
-    Random random= new Random();
-    int result=random.nextInt(3)+1;
+
+  public void brawl(Pirate pirate) {
+    Random random = new Random();
+    int result = random.nextInt(3) + 1;
     if (isDead) {
       System.out.println(dead);
     } else {
-      if (result==1){
+      if (result == 1) {
         this.die();
-        System.out.println("The winner is: "+pirate.getName());
-      }else if (result==2){
+        System.out.println("The winner is: " + pirate.getName());
+      } else if (result == 2) {
         pirate.die();
-        System.out.println("The winner is: "+this.getName());
-      }else{
+        System.out.println("The winner is: " + this.getName());
+      } else {
         this.die();
         pirate.die();
         System.out.println("Both of them are dead!");
@@ -73,6 +75,24 @@ else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and 
       }
     }
 
+  }
+
+
+  public String piratetoString() {
+    String result = "";
+    String very = "very";
+    if (this.getRank().equals("Captain")) {
+      result = "Me Blue beard " + this.getName() + "I have all the Rum in the ship c'uz I'm the " + this.getRank();
+    } else {
+      result = "Me  " + this.getName() + "I love RUM if Captain leave me som c'uz I'm a " + this.getRank();
+    }
+
+
+    return result;
+  }
+
+  public String getRank() {
+    return rank;
   }
 
   public int getDrunkLevel() {

@@ -19,11 +19,14 @@ else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and 
 
     Pirate jack = new Pirate("Jack");
     Pirate john = new Pirate("John");
+    Pirate george=new Pirate("George");
+Ship ship=new Ship();
+ship.fillShip();
 
-    jack.brawl(john);
-    jack.drinkSomeRum();
-    john.drinkSomeRum();
-
+ship.toString();
+   /* for (int i = 0; i <ship.crew.size() ; i++) {
+      System.out.println(ship.crew.get(i).piratetoString());
+    }*/
 
   }
 }

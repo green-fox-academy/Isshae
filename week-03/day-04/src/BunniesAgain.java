@@ -5,8 +5,18 @@ public class BunniesAgain {
 // have 3 ears, because they each have a raised foot. Recursively return the
 // number of "ears" in the bunny line 1, 2, ... n (without loops or multiplication).
 
-    int bunnies = 101;
+    int bunnies = 100;
 
+
+    int result = 0;
+    for (int i = 0; i < bunnies; i++) {
+      if (i % 2 == 0) {
+        result += 3;
+      } else {
+        result += 2;
+      }
+    }
+    System.out.println(result);
     System.out.println(earsAgain(bunnies));
   }
 

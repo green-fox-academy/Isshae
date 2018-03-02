@@ -19,36 +19,58 @@ the ship should win if its calculated score is higher
 calculate score: Number of Alive pirates in the crew - Number of consumed rum by the captain
 The loser crew has a random number of losses (deaths).
 The winner captain and crew has a party, including a random number of rum :)*/
-  public String[] Beginning = {"Kr", "Ca", "Ra", "Mrok", "Cru",
-          "Ray", "Bre", "Zed", "Drak", "Mor", "Jag", "Mer", "Jar", "Mjol",
-          "Zork", "Mad", "Cry", "Zur", "Creo", "Azak", "Azur", "Rei", "Cro",
-          "Mar", "Luk"};
-  public String[] Middle = {"air", "ir", "mi", "sor", "mee", "clo",
-          "red", "cra", "ark", "arc", "miri", "lori", "cres", "mur", "zer",
-          "marac", "zoir", "slamar", "salmar", "urak"};
-  public String[] End = {"d", "ed", "ark", "arc", "es", "er", "der",
-          "tron", "med", "ure", "zur", "cred", "mur"};
+
 
   public Random random = new Random();
 
-  List<Pirate> crew=new ArrayList<>();
+  List<Pirate> crew = new ArrayList<>();
 
-  public void fillShip(){
-   int shipCrew=random.nextInt(30)+6;
-    for (int i = 0; i <shipCrew ; i++) {
+  public void fillShip() {
+    int shipCrew = random.nextInt(30) + 6;
+    for (int i = 0; i < shipCrew; i++) {
       crew.add(new Pirate(generateName()));
-      crew.get(i).setDrunkLevel(random.nextInt(4)+1);
-      if (i==shipCrew-1){
+      crew.get(i).setDrunkLevel(random.nextInt(4) + 1);
+      if (i == shipCrew - 1) {
         crew.get(i).setRank("Captain");
       }
     }
   }
 
+  public void battle(Ship ship) {
+ 
+
+  }
+
+  public boolean isAllDead(Ship ship) {
+    boolean isAllDead = false;
+    int crew = ship.crew.size() - 1;
+    while (!ship.crew.get(crew).isDead()) {
+      if (!ship.crew.get(crew).isDead()) {
+        break;
+      } else {
+        isAllDead = true;
+      }
+      crew--;
+    }
+    return isAllDead;
+  }
+
+
+  public String[] beginning = {"Kr", "Ca", "Ra", "Mrok", "Cru",
+          "Ray", "Bre", "Zed", "Drak", "Mor", "Jag", "Mer", "Jar", "Mjol",
+          "Zork", "Mad", "Cry", "Zur", "Creo", "Azak", "Azur", "Rei", "Cro",
+          "Mar", "Luk"};
+  public String[] middle = {"air", "ir", "mi", "sor", "mee", "clo",
+          "red", "cra", "ark", "arc", "miri", "lori", "cres", "mur", "zer",
+          "mara", "zoir", "slam", "salma", "urak"};
+  public String[] end = {"d", "ed", "ark", "arc", "es", "er", "der",
+          "tron", "med", "ure", "zur", "cred", "mur"};
+
   public String generateName() {
 
-    return Beginning[random.nextInt(Beginning.length)] +
-            Middle[random.nextInt(Middle.length)] +
-            End[random.nextInt(End.length)];
+    return beginning[random.nextInt(beginning.length)] +
+            middle[random.nextInt(middle.length)] +
+            end[random.nextInt(end.length)];
   }
 
 

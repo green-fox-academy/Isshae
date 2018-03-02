@@ -65,18 +65,18 @@ public class DrawingFractals {
     boolean isSwitch = true;
     while (true) {
       if (iterator == 10) {
-  isSwitch=false;
-      }else if (iterator==0){
-        isSwitch=true;
+        isSwitch = false;
+      } else if (iterator == 0) {
+        isSwitch = true;
       }
-      if (isSwitch){
+      if (isSwitch) {
         iterator++;
-      }else{
+      } else {
         iterator--;
       }
 
       imagePanel.repaint();
-      Thread.sleep(300-(iterator*10));
+      Thread.sleep(300 - (iterator * 10));
 
     }
   }
@@ -86,8 +86,8 @@ public class DrawingFractals {
     protected void paintComponent(Graphics graphics) {
 
       super.paintComponent(graphics);
-      Graphics2D g2=(Graphics2D) graphics;
-      g2.setStroke(new BasicStroke(iterator/2));
+      Graphics2D g2 = (Graphics2D) graphics;
+      g2.setStroke(new BasicStroke(iterator / 2));
       mainDraw(graphics);
     }
   }
