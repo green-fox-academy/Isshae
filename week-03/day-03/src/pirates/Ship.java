@@ -41,11 +41,11 @@ The winner captain and crew has a party, including a random number of rum :)*/
   }
 
   public void battle(Ship ship) {
-    for (int i = 0; i < this.crew.size(); i++) {
-      for (int j = 0; j < ship.crew.size(); j++) {
-        this.crew.get(i).brawl(ship.crew.get(j));
-        if (ship.crew.get(j).isDead()) {
-          ship.crew.remove(j);
+    for (int thisCrewIterator = 0; thisCrewIterator < this.crew.size(); thisCrewIterator++) {
+      for (int shipCrewIterator = 0; shipCrewIterator < ship.crew.size(); shipCrewIterator++) {
+        this.crew.get(thisCrewIterator).brawl(ship.crew.get(shipCrewIterator));
+        if (ship.crew.get(shipCrewIterator).isDead()) {
+          ship.crew.remove(shipCrewIterator);
         }
       }
     }
@@ -53,13 +53,11 @@ The winner captain and crew has a party, including a random number of rum :)*/
       System.out.println("Both of them lost!");
       return;
     }
-
     if (isAllDead(this)) {
       System.out.println("The winner is " + ship.getShipsName());
     } else {
       System.out.println("The winner is " + this.getShipsName());
     }
-
   }
 
   public boolean isAllDead(Ship ship) {
