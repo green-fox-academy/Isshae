@@ -1,6 +1,6 @@
 package pirates;
 
-public class Main{
+public class Main {
 
   public static void main(String[] args) {
    /* Create a Pirate class. While you can add other fields and methods, you must have these methods:-
@@ -19,13 +19,23 @@ else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and 
 
     Pirate jack = new Pirate("Jack");
     Pirate john = new Pirate("John");
-    Pirate george=new Pirate("George");
-Ship ship=new Ship();
-ship.fillShip();
+    Pirate george = new Pirate("George");
+    Ship bobsBoat = new Ship("Bob's boat");
+    Ship santaMaria = new Ship("Santa Maria");
 
-ship.toString();
-   /* for (int i = 0; i <ship.crew.size() ; i++) {
-      System.out.println(ship.crew.get(i).piratetoString());
+
+
+    jack.brawl(john);
+
+
+
+
+   /* bobsBoat.fillShip();
+    santaMaria.fillShip();
+    bobsBoat.battle(santaMaria);*/
+
+  /* for (int i = 0; i <bobsBoat.crew.size() ; i++) {
+      System.out.println(bobsBoat.crew.get(i).piratetoString());
     }*/
 
   }

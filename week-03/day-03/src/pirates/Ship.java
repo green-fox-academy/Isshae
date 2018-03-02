@@ -19,14 +19,18 @@ the ship should win if its calculated score is higher
 calculate score: Number of Alive pirates in the crew - Number of consumed rum by the captain
 The loser crew has a random number of losses (deaths).
 The winner captain and crew has a party, including a random number of rum :)*/
+  private String shipsName;
 
+  public Ship(String shipsName) {
+    this.shipsName = shipsName;
+  }
 
   public Random random = new Random();
 
   List<Pirate> crew = new ArrayList<>();
 
   public void fillShip() {
-    int shipCrew = random.nextInt(30) + 6;
+    int shipCrew = random.nextInt(20) + 6;
     for (int i = 0; i < shipCrew; i++) {
       crew.add(new Pirate(generateName()));
       crew.get(i).setDrunkLevel(random.nextInt(4) + 1);
@@ -37,24 +41,39 @@ The winner captain and crew has a party, including a random number of rum :)*/
   }
 
   public void battle(Ship ship) {
- 
+    for (int i = 0; i < this.crew.size(); i++) {
+      for (int j = 0; j < ship.crew.size(); j++) {
+        this.crew.get(i).brawl(ship.crew.get(j));
+        if (ship.crew.get(j).isDead()) {
+          ship.crew.remove(j);
+        }
+      }
+    }
+    if (isAllDead(ship) && isAllDead(this)) {
+      System.out.println("Both of them lost!");
+      return;
+    }
+
+    if (isAllDead(this)) {
+      System.out.println("The winner is " + ship.getShipsName());
+    } else {
+      System.out.println("The winner is " + this.getShipsName());
+    }
 
   }
 
   public boolean isAllDead(Ship ship) {
-    boolean isAllDead = false;
-    int crew = ship.crew.size() - 1;
-    while (!ship.crew.get(crew).isDead()) {
-      if (!ship.crew.get(crew).isDead()) {
-        break;
-      } else {
-        isAllDead = true;
+    for (int i = 0; i < ship.crew.size(); i++) {
+      if (!ship.crew.get(i).isDead()) {
+        return false;
       }
-      crew--;
     }
-    return isAllDead;
+    return true;
   }
 
+  public String getShipsName() {
+    return shipsName;
+  }
 
   public String[] beginning = {"Kr", "Ca", "Ra", "Mrok", "Cru",
           "Ray", "Bre", "Zed", "Drak", "Mor", "Jag", "Mer", "Jar", "Mjol",
@@ -72,6 +91,4 @@ The winner captain and crew has a party, including a random number of rum :)*/
             middle[random.nextInt(middle.length)] +
             end[random.nextInt(end.length)];
   }
-
-
 }

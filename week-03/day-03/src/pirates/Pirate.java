@@ -20,22 +20,29 @@ else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and 
   private String rank;
   private String name;
   private String pourMe = "Pour me anudder!";
-  private String imPirate = "Arghh, I'ma Pirate. How d'ya d'ink its goin?";
-  private String dead = "I'm dead";
+  private String imPirate = "Arghh, I'ma feeling good! How d'ya d'ink its goin?";
+  private String dead;
 
   public Pirate(String name) {
     this.name = name;
     drunkLevel = 0;
     isDead = false;
     rank = "Sea rat";
+    dead = this.getName() + " is dead!";
   }
 
   public void drinkSomeRum() {
     if (isDead) {
       System.out.println(dead);
-    } else {
-      drunkLevel++;
     }
+    if (0 < drunkLevel && drunkLevel <= 4) {
+      System.out.println(pourMe);
+    } else if(5 < drunkLevel && drunkLevel <= 6) {
+      System.out.println(imPirate);
+    }else{
+      System.out.println(this.getName()+" drank himself to the ground, and fainted!");
+    }
+    drunkLevel++;
   }
 
   public void howsItGoingMate() {
@@ -43,13 +50,10 @@ else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and 
       System.out.println(dead);
 
     } else {
-      if (0 < drunkLevel && drunkLevel <= 4) {
-        System.out.println(pourMe);
-      } else {
-        System.out.println(imPirate);
-      }
+
     }
   }
+
 
   public void die() {
     isDead = true;
@@ -59,18 +63,18 @@ else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and 
     Random random = new Random();
     int result = random.nextInt(3) + 1;
     if (isDead) {
-      System.out.println(dead);
+      // System.out.println(dead);
     } else {
       if (result == 1) {
         this.die();
-        System.out.println("The winner is: " + pirate.getName());
+        System.out.println(pirate.getName() + " took a cheap shot and killed "+this.getName());
       } else if (result == 2) {
         pirate.die();
-        System.out.println("The winner is: " + this.getName());
+        System.out.println("In a heroic battle " + this.getName() + " has won!");
       } else {
         this.die();
         pirate.die();
-        System.out.println("Both of them are dead!");
+        System.out.println("They were too drunk and killed each other!");
 
       }
     }
@@ -80,11 +84,11 @@ else, "Arghh, I'ma Pirate. How d'ya d'ink its goin?", the pirate passes out and 
 
   public String piratetoString() {
     String result = "";
-    String very = "very";
+
     if (this.getRank().equals("Captain")) {
       result = "Me Blue beard " + this.getName() + "I have all the Rum in the ship c'uz I'm the " + this.getRank();
     } else {
-      result = "Me  " + this.getName() + "I love RUM if Captain leave me som c'uz I'm a " + this.getRank();
+      result = "Me  " + this.getName() + " I love RUM if Captain leave me som c'uz I'm a " + this.getRank();
     }
 
 
