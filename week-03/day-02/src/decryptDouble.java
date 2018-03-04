@@ -27,7 +27,10 @@ public class decryptDouble {
       Scanner scanner = new Scanner(new File(fileName));
       while (scanner.hasNext()) {
         dectrypted.add(scanner.next());
-      }
+      }  } catch (IOException IOEx) {
+      System.err.println("Something went wrong!");
+    }
+
       for (int i = 0; i <dectrypted.toString().length() ; i++) {
         chars.add(dectrypted.toString().charAt(i));
       }
@@ -38,9 +41,7 @@ public class decryptDouble {
       {
         builder.append(ch);
       }
-    } catch (IOException IOEx) {
-      System.err.println("Something went wrong!");
-    }
+
 
     return builder.toString().replace(',',' ');
   }
