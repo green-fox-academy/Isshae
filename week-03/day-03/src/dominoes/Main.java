@@ -19,7 +19,9 @@ public class Main {
     List<Domino> orderedDominoes = new ArrayList<>();
     orderedDominoes.add(dominoes.get(0));
 
-    for (int i = 0; i < orderedDominoes.size(); i++) {
+    int dominoCount = dominoes.size();
+
+    for (int i = 0; i < dominoCount; i++) {
       int[] tempValues = orderedDominoes.get(i).getValues();
 
       for (int j = 1; j < dominoes.size(); j++) {

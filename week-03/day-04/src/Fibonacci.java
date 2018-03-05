@@ -1,8 +1,7 @@
-import sun.rmi.runtime.NewThreadAction;
-
-import java.util.Scanner;
-
 public class Fibonacci {
+  static int[] memoization;
+
+
   public static void main(String[] args) {
     // The fibonacci sequence is a famous bit of mathematics, and it happens to
 // have a recursive definition. The first two values in the sequence are
@@ -16,12 +15,16 @@ public class Fibonacci {
     System.out.println(fibonacci(fibo));
   }
 
-  public static int fibonacci(int n) {
-    if (n == 0)
-      return 0;
-    else if (n == 1)
-      return 1;
-    else
-      return fibonacci(n - 1) + fibonacci(n - 2);
+  public static int fibonacci(int fibo) {
+    if (fibo == 0) {
+      return memoization[0];
+    } else {
+      int f = memoization[fibo];
+      if (f == 0) {
+        f = fibonacci(fibo - 1) + fibonacci(fibo - 2);
+        memoization[fibo] = f;
+      }
+      return f;
+    }
   }
 }
