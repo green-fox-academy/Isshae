@@ -24,6 +24,7 @@ Mentor(): sets name to Jane Doe, age to 30, gender to female, level to intermedi
   }
 
   public Mentor() {
+    super();
     level = intermediateLevel;
   }
 
