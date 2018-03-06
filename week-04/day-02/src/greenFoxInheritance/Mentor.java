@@ -21,6 +21,7 @@ Mentor(): sets name to Jane Doe, age to 30, gender to female, level to intermedi
   public Mentor(String name, int age, String gender, String level) {
     super(name, age, gender);
     this.level = level;
+    level = intermediateLevel;
   }
 
   public Mentor() {
