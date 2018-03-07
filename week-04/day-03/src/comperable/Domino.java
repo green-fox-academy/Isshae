@@ -1,12 +1,12 @@
 package comperable;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Domino implements Comparable , Printable  {
+
+public class Domino implements Comparable , Printable {
 
   public static void main(String[] args) {
     List<Domino> dominoes = initializeDominoes();
