@@ -2,9 +2,11 @@ package comperable;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-public class Domino implements Comparable{
+public class Domino implements Comparable , Printable  {
 
   public static void main(String[] args) {
     List<Domino> dominoes = initializeDominoes();
@@ -15,7 +17,12 @@ public class Domino implements Comparable{
     System.out.println(dominoes);
     System.out.println(orderDominoes(dominoes));
 
+    Collections.sort(dominoes);
 
+    System.out.println(Arrays.asList(dominoes));
+    for (Domino d : dominoes) {
+      d.printAllFields();
+    }
   }
   static List<Domino> initializeDominoes() {
     List<Domino> dominoes = new ArrayList<>();
@@ -72,5 +79,10 @@ public class Domino implements Comparable{
   @Override
   public int compareTo(Object o) {
     return toString().compareTo(o.toString());
+  }
+
+  @Override
+  public void printAllFields() {
+    System.out.println(this);
   }
 }
