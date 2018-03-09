@@ -17,7 +17,7 @@ Run the test
 Fix the returned value to make the test succeeding again*/
 
   private String apple;
-
+private String banana;
   public Apple(String apple) {
     this.apple = apple;
   }
