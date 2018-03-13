@@ -1,7 +1,7 @@
 package dominoes;
 
 
-public class Domino implements Printable{
+public class Domino {
   private final int[] values;
 
   public Domino(int valueA, int valueB) {
