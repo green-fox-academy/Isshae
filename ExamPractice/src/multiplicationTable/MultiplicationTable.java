@@ -1,3 +1,5 @@
+package multiplicationTable;
+
 public class MultiplicationTable {
   public static void main(String[] args) {
 // Create a function that prints the multiplication table of a given base number.
