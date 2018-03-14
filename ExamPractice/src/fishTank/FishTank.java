@@ -18,6 +18,8 @@ public class FishTank {
     Aquarium aquarium = new Aquarium();
 
     aquarium.add(new Koi("Nami", 9, "pink"));
+    aquarium.add(new Koi("Nami", 9, "pink"));
+    aquarium.add(new Koi("Nami", 9, "pink"));
     aquarium.add(new Tang("Dory", 8, "blue", true));
     aquarium.add(new Tang("Bubbles", 10, "yellow", false));
     aquarium.add(new Clownfish("Nemo", 5, "orange", "white"));

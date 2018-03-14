@@ -16,8 +16,8 @@ private String name;
 
   public Vehicle(String name) {
     this.name = name;
-    weight = 100;
-    speed = 0;
+    this.weight = 100;
+    this.speed = 0;
   }
 
   public abstract void accelerate();

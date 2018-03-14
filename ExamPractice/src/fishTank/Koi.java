@@ -12,11 +12,11 @@ public class Koi extends Fish {
 
   @Override
   public void feedFish() {
-    this.weight += 2;
+    setWeight(getWeight() + 2);
   }
 
   @Override
   public String fishStatus() {
-    return this.name + ", Weight: " + this.weight + ", Color: " + this.color;
+    return this.name + ", Weight: " + getWeight() + ", Color: " + this.color;
   }
 }

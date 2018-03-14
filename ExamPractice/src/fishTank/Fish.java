@@ -2,7 +2,7 @@ package fishTank;
 
 public abstract class Fish {
   String name;
-  int weight;
+ private int weight;
   String color;
 
   public Fish(String name, int weight, String color) {
@@ -14,4 +14,12 @@ public abstract class Fish {
   public abstract void feedFish();
 
   public abstract String fishStatus();
+
+  public void setWeight(int weight) {
+    this.weight = weight;
+  }
+
+  public int getWeight() {
+    return weight;
+  }
 }

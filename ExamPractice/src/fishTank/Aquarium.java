@@ -24,8 +24,9 @@ public class Aquarium {
 
   public void removeOversizedFishes() {
     for (int i = 0; i < aquarium.size(); i++) {
-      if (aquarium.get(i).weight >= 11) {
+      if (aquarium.get(i).getWeight() >= 11) {
         aquarium.remove(aquarium.get(i));
+        i--;
       }
     }
   }
@@ -33,7 +34,7 @@ public class Aquarium {
   public String status() {
     String result = "";
     for (Fish fish : aquarium) {
-     result += fish.fishStatus() + "\n";
+      result += fish.fishStatus() + "\n";
     }
     return result;
   }

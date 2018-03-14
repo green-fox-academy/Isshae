@@ -13,11 +13,11 @@ public class Tang extends Fish {
 
   @Override
   public void feedFish() {
-    this.weight++;
+   setWeight(getWeight() + 1);
   }
 
   @Override
   public String fishStatus() {
-    return this.name + ", Weight: " + this.weight + ", Color: " + this.color + " Short-term memory loss: " + isShortTermMemoryLoss;
+    return this.name + ", Weight: " + getWeight() + ", Color: " + this.color + " Short-term memory loss: " + isShortTermMemoryLoss;
   }
 }

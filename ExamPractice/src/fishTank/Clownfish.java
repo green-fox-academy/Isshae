@@ -11,11 +11,11 @@ public class Clownfish extends Fish {
 
   @Override
   public void feedFish() {
-    this.weight++;
+    setWeight(getWeight() + 1);
   }
 
   @Override
   public String fishStatus() {
-    return this.name + ", Weight: " + this.weight + ", Color: " + this.color + " Stripe color: " + this.stripeColor;
+    return this.name + ", Weight: " + getWeight() + ", Color: " + this.color + " Stripe color: " + this.stripeColor;
   }
 }

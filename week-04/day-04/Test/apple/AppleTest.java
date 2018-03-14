@@ -13,8 +13,9 @@ public class AppleTest {
   public void setUp() {
     apple = new Apple("apple");
   }
+
   @Test
   public void getAppleTest() {
-assertEquals("apple",apple.getAppleString());
+    assertEquals("apple", apple.getAppleString());
   }
 }
