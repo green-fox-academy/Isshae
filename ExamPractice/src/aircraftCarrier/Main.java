@@ -12,12 +12,25 @@ public class Main {
     carrier.addAircraft(new F35());
     carrier.addAircraft(new F35());
 
+    Carrier carrier1 = new Carrier("USSR Moscow", 5000);
+    carrier1.addAircraft(new F16());
+    carrier1.addAircraft(new F16());
+    carrier1.addAircraft(new F16());
+    carrier1.addAircraft(new F35());
+    carrier1.addAircraft(new F35());
+    carrier1.addAircraft(new F35());
+
     carrier.fillAllAircraftWithAmmo();
     System.out.println(carrier.getAmountInAmmoStorage());
 
     System.out.println(f16.getCurrentAmmo());
     System.out.println(f16.refill(50));
     System.out.println(f16.getCurrentAmmo());
+
+    carrier.carrierBattle(carrier1);
+    carrier.fillAllAircraftWithAmmo();
+    carrier.carrierBattle(carrier1);
+
   }
 
 }

@@ -15,7 +15,9 @@ public class Aircraft {
   }
 
   public int fight() {
-    return currentAmmo * baseDamage;
+   int startingAmmo = currentAmmo;
+    currentAmmo = 0;
+    return startingAmmo * baseDamage;
   }
 
   public int refill(int amountInAmmoStorage) {

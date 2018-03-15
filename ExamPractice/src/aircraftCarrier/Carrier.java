@@ -40,6 +40,19 @@ The carrier also has a health point given in it's constructor as well*/
     }
   }
 
+  public void carrierBattle(Carrier carrier) {
+    int damageCounter = 0;
+    for (int i = 0; i < aircraftStorage.size(); i++) {
+      damageCounter += aircraftStorage.get(i).fight();
+    }
+    carrier.health -= damageCounter;
+    if (carrier.health <= 0) {
+      System.out.println("It's dead Jim :(");
+    } else {
+      System.out.println("The battle can go on... after a quick refill " + carrier.health);
+    }
+  }
+
   public int getAmountInAmmoStorage() {
     return amountInAmmoStorage;
   }
