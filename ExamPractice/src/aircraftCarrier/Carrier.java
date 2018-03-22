@@ -31,7 +31,7 @@ The carrier also has a health point given in it's constructor as well*/
     } else {
       for (int i = 0; i < aircraftStorage.size(); i++) {
         Aircraft aircraft = aircraftStorage.get(i);
-        if (aircraft.getType().equals("F35")) {
+        if (aircraft.isPriority()) {
           amountInAmmoStorage = aircraftStorage.get(i).refill(amountInAmmoStorage);
         } else {
           amountInAmmoStorage = aircraftStorage.get(i).refill(amountInAmmoStorage);
