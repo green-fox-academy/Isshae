@@ -1,15 +1,24 @@
 package com.greenfoxacademy.bank.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BankAccount {
 
   private String name;
-  private int balance;
+  private double balance;
   private String animalType;
+  private String currency;
 
-  public BankAccount(String name, int balance, String animalType) {
+  public BankAccount() {
+  }
+
+  public BankAccount(String name, double balance, String animalType) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
+    this.currency = "Zebra";
+
   }
 
   public String getName() {
@@ -20,11 +29,11 @@ public class BankAccount {
     this.name = name;
   }
 
-  public int getBalance() {
+  public double getBalance() {
     return balance;
   }
 
-  public void setBalance(int balance) {
+  public void setBalance(double balance) {
     this.balance = balance;
   }
 
@@ -34,5 +43,20 @@ public class BankAccount {
 
   public void setAnimalType(String animalType) {
     this.animalType = animalType;
+  }
+
+  public String getCurrency() {
+    return currency;
+  }
+
+  public void setCurrency(String currency) {
+    this.currency = currency;
+  }
+
+  @Override
+  public String toString() {
+    return "name = " + name  +
+            ", balance = " + balance + currency +
+            ", animalType = " + animalType + " \n ";
   }
 }

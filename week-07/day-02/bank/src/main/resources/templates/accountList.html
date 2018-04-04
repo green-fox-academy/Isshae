@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+  <head>
     <title>Thymeleaf Exercise #</title>
     <link rel="stylesheet" th:href="@{/style.css}"/>
     <meta charset="utf-8"/>
-</head>
-<body>
-  <p th:text="'Hello, ' + ${name} + '! Your balance is: ' + ${balance} + ${currency} + ' , and I know that you are a ' + ${animalType} + '.'"/>
-</body>
+  </head>
+  <body>
+    <ul>
+       <li th:each="accounts:${accounts}" th:text="${accountsStat.count} + ' ' + ${accounts}"> </li>
+    </ul>
+  </body>
 </html>
