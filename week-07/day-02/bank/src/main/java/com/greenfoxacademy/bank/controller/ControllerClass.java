@@ -17,4 +17,11 @@ public class ControllerClass {
     model.addAttribute("animalType", bankAccount.getAnimalType());
     return "bankAccount";
   }
+
+  @GetMapping("/submit")
+  public String submit(@RequestParam(name = "submit", required = false) String submit, Model model){
+    submit = "\"This is an <em>HTML</em> text. <b>Enjoy yourself!</b>\"";
+    model.addAttribute("submit", submit);
+    return "submit";
+  }
 }
