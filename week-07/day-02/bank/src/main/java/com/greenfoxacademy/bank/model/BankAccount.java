@@ -9,6 +9,7 @@ public class BankAccount {
   private double balance;
   private String animalType;
   private String currency;
+  private boolean isKing;
 
   public BankAccount() {
   }
@@ -18,7 +19,14 @@ public class BankAccount {
     this.balance = balance;
     this.animalType = animalType;
     this.currency = "Zebra";
+  }
 
+  public BankAccount(String name, double balance, String animalType, boolean isKing) {
+    this.name = name;
+    this.balance = balance;
+    this.animalType = animalType;
+    this.currency = "Zebra";
+    this.isKing = isKing;
   }
 
   public String getName() {
@@ -53,9 +61,17 @@ public class BankAccount {
     this.currency = currency;
   }
 
+  public boolean isKing() {
+    return isKing;
+  }
+
+  public void setKing(boolean king) {
+    isKing = king;
+  }
+
   @Override
   public String toString() {
-    return "name = " + name  +
+    return "name = " + name +
             ", balance = " + balance + currency +
             ", animalType = " + animalType + " \n ";
   }

@@ -1,0 +1,13 @@
+.king{
+    color : gold;
+}
+table, td, th {
+    border-collapse: collapse;
+    border-spacing: 10px;
+    letter-spacing: 2px;
+    border: 1px  solid black;
+
+}
+td {
+    padding: 10px;
+}

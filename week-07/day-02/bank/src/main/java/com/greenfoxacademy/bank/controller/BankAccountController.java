@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class ControllerClass {
+public class BankAccountController {
 
   @GetMapping("/show")
-  public String show(@RequestParam(name = "bankAccount", required = false) BankAccount bankAccount, Model model) {
-    bankAccount = new BankAccount("Simba", 2000, "Lion");
+    public String show(Model model) {
+    BankAccount bankAccount = new BankAccount("Simba", 2000, "Lion");
     model.addAttribute("name", bankAccount.getName());
     model.addAttribute("balance", bankAccount.getBalance());
     model.addAttribute("animalType", bankAccount.getAnimalType());
@@ -23,19 +23,19 @@ public class ControllerClass {
   }
 
   @GetMapping("/submit")
-  public String submit(@RequestParam(name = "submit", required = false) String submit, Model model) {
-    submit = "\"This is an <em>HTML</em> text. <b>Enjoy yourself!</b>\"";
+  public String submit(Model model) {
+    String submit = "\"This is an <em>HTML</em> text. <b>Enjoy yourself!</b>\"";
     model.addAttribute("submit", submit);
     return "submit";
   }
 
   @GetMapping("/accountList")
-  public String accountList(@RequestParam(name = "accountList", required = false) String name, Model model) {
+  public String accountList( Model model) {
     List<BankAccount> accounts = new ArrayList<>();
     accounts.add(new BankAccount("Zazu", 10000, "Bird"));
-    accounts.add(new BankAccount("Zordon", 5000, "Lion"));
+    accounts.add(new BankAccount("Zordon", 5000, "Lion",true));
     accounts.add(new BankAccount("Pumba", 200, "Pig"));
-    accounts.add(new BankAccount("Timon", 4000, "Rat"));
+    accounts.add(new BankAccount("Timon", 4000, "Rat",true));
     accounts.add(new BankAccount("Nala", 3000, "Lion"));
     model.addAttribute("accounts", accounts);
     return "accountList";
