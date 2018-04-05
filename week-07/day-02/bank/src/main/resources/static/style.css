@@ -1,13 +1,18 @@
 .king{
-    color : gold;
+    color : pink;
 }
 table, td, th {
+    al
     border-collapse: collapse;
     border-spacing: 10px;
     letter-spacing: 2px;
     border: 1px  solid black;
-
 }
 td {
     padding: 10px;
+}
+body{
+    background-color: lightblue;
+    color: yellow;
+    text-align: center;
 }
