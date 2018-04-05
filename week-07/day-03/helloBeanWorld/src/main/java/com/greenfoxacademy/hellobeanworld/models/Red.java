@@ -1,4 +1,6 @@
-package com.greenfoxacademy.hellobeanworld.colors;
+package com.greenfoxacademy.hellobeanworld.models;
+
+import com.greenfoxacademy.hellobeanworld.services.MyColor;
 
 public class Red implements MyColor {
   @Override

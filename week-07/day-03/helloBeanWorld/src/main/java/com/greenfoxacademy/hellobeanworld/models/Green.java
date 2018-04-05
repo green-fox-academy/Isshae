@@ -1,5 +1,6 @@
-package com.greenfoxacademy.hellobeanworld.colors;
+package com.greenfoxacademy.hellobeanworld.models;
 
+import com.greenfoxacademy.hellobeanworld.services.MyColor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 

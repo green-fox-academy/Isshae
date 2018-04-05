@@ -1,9 +1,7 @@
 package com.greenfoxacademy.hellobeanworld;
 
-import com.greenfoxacademy.hellobeanworld.colors.Blue;
-import com.greenfoxacademy.hellobeanworld.colors.Green;
-import com.greenfoxacademy.hellobeanworld.colors.MyColor;
-import com.greenfoxacademy.hellobeanworld.colors.Red;
+import com.greenfoxacademy.hellobeanworld.services.MyColor;
+import com.greenfoxacademy.hellobeanworld.services.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
