@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Smart Fox static view</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<h1>Login</h1>
+<form action="#" th:action="@{/login}" method="post">
+    <label for="petname">User name:</label>
+    <input type="text" id="petname" name="petname"/>
+    <input type="submit" value="Login"/>
+</form>
+</body>
+</html>
