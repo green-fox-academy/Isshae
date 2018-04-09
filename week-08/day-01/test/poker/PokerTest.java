@@ -105,4 +105,24 @@ public class PokerTest {
     String output = poker.evaluateWinner(whiteInput, blackInput);
     assertEquals(expectedOutput, output);
   }
+  @Test
+  public void evaluateFlush() {
+    List<Card> whiteInput = Arrays.asList(
+            new Card(2, "H"),
+            new Card(3, "H"),
+            new Card(4, "H"),
+            new Card(8, "H"),
+            new Card(Card.A, "H")
+    );
+    List<Card> blackInput = Arrays.asList(
+            new Card(2, "H"),
+            new Card(3, "D"),
+            new Card(4, "S"),
+            new Card(8, "C"),
+            new Card(Card.K, "D")
+    );
+    String expectedOutput = "Tie";
+    String output = poker.evaluateWinner(whiteInput, blackInput);
+    assertEquals(expectedOutput, output);
+  }
 }
