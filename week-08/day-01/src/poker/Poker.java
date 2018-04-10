@@ -3,7 +3,6 @@ package poker;
 import java.util.Collections;
 import java.util.List;
 
-
 public class Poker {
   WhiteHand whiteHand = new WhiteHand();
 
@@ -11,11 +10,6 @@ public class Poker {
   int q = 12;
   int k = 13;
   int a = 14;
-
-public String flushCheck(List<Card> whiteList, List<Card> blackList){
-
-}
-
 
   public String evaluateWinner(List<Card> whiteList, List<Card> blackList) {
     Collections.reverse(whiteList);

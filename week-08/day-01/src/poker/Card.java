@@ -6,7 +6,6 @@ public class Card {
   public static int K = 13;
   public static int A = 14;
 
-
   private int value;
   private String color;
 

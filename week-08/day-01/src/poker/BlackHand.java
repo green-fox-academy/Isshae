@@ -20,5 +20,4 @@ public class BlackHand extends Card {
           new Card(2,"D"),
           new Card(4,"H")
   ));
-
 }
