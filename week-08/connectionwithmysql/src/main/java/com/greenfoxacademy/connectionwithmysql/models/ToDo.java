@@ -1,11 +1,14 @@
 package com.greenfoxacademy.connectionwithmysql.models;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@Component
 public class ToDo {
   //Add a Todo class with the fields(id:Long, title:String, isUrgent:boolean(default false), isDone:boolean(default false))
 

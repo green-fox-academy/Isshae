@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo Page</title>
+    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<h1>Add new ToDO!</h1>
+
+<form action="#" th:action="@{/addnewtodo}" method="post">
+    <label for="todo">ToDo task:</label>
+    <input type="text" id="todo" name="todo"/>
+    <input type="submit" value="Submit"/>
+</form>
+
+
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>

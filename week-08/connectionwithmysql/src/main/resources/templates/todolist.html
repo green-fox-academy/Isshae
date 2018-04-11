@@ -3,23 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>ToDo Page</title>
-    <link rel="stylesheet" th:href="@{/stylesheet.css}"/>
+    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
-<h1>ToDos for today!</h1>
-<table border="1">
-    <tr>
-        <th>id</th>
-        <th>title</th>
-        <th>urgent</th>
-        <th>done</th>
-    </tr>
-    <tr th:each = "todo: ${todos}">
-        <td th:text="${todo.getId()}"></td>
-        <td th:text="${todo.getTitle()}"></td>
-        <td th:text="${todo.isUrgent()}"></td>
-        <td th:text="${todo.isDone()}"></td>
-    </tr>
-</table>
+<div class="container-fluid">
+    <div class="col-md-9">
+        <div class="text-center">
+            <h1>ToDos for today!</h1>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <table class="table">
+            <thead>
+            <tr>
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>urgent</th>
+                <th>done</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="todo: ${todos}">
+                <td th:text="${todo.getId()}"></td>
+                <td th:text="${todo.getTitle()}"></td>
+                <td th:text="${todo.isUrgent()}"></td>
+                <td th:text="${todo.isDone()}"></td>
+
+                <td><input style="width: 70% ; padding: 8px 4px" type="button" class="btn btn-xs btn-warning"
+                           value="Update"
+                           onclick=""></td>
+                <td><a style="width: 70%; padding: 8px 4px" type="button" class="btn btn-xs btn-danger"
+                       th:text="Delete" th:href="'/' + ${todo.id}"></a></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <input type="button" class="btn btn-success" value="Add new todo!"
+                   onclick="location.href = 'http://localhost:8080/addnewtodo';">
+        </div>
+    </div>
+</div>
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>
