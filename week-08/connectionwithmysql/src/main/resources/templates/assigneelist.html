@@ -13,11 +13,17 @@
             <th>id</th>
             <th>name</th>
             <th>email</th>
+            <th></th>
+            <th></th>
         </tr>
         <tr th:each="assignee: ${assignees}">
             <td th:text="${assignee.getId()}"></td>
             <td th:text="${assignee.getName()}"></td>
             <td th:text="${assignee.getEmail()}"></td>
+            <td><a style="width: 70% ; padding: 8px 4px" type="button" class="btn btn-xs btn-warning"
+                   th:text="Update" th:href="'/updateassignee'"></a></td>
+            <td><a style="width: 70%; padding: 8px 4px" type="button" class="btn btn-xs btn-danger"
+                   th:text="Delete" th:href="'/assigneelist' + ${assignee.id}"></a></td>
         </tr>
         </tbody>
     </table>
