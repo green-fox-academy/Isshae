@@ -12,6 +12,25 @@
             <h1>ToDos for today!</h1>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-9">
+            <div class="text-right">
+                <h3>Search in todos!</h3>
+                <div class="text-left">
+                    <input type="button" class="btn btn-primary" value="Add new todo!"
+                           onclick="location.href = 'http://localhost:8080/assigneelist';">
+                </div>
+                <form style="padding: 5px 30px 30px" th:action="@{/filter}" method="post">
+                    <input type="text" name="title">
+                    <!--<input type="checkbox" name="urgent" > Urgent-->
+                    <!--<input type="checkbox" name="done" > Done-->
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div class="col-md-9">
         <table class="table">
             <thead>
@@ -30,9 +49,8 @@
                 <td th:text="${todo.isUrgent()}"></td>
                 <td th:text="${todo.isDone()}"></td>
 
-                <td><input style="width: 70% ; padding: 8px 4px" type="button" class="btn btn-xs btn-warning"
-                           value="Update"
-                           onclick=""></td>
+                <td><a style="width: 70% ; padding: 8px 4px" type="button" class="btn btn-xs btn-warning"
+                       th:text="Update" th:href="'/update'"></a></td>
                 <td><a style="width: 70%; padding: 8px 4px" type="button" class="btn btn-xs btn-danger"
                        th:text="Delete" th:href="'/' + ${todo.id}"></a></td>
 

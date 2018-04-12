@@ -8,5 +8,8 @@ import java.util.List;
 public interface ToDoRepository extends CrudRepository<ToDo,Long> {
 
   public List<ToDo> findAllByIsDoneIsFalse();
+  public List<ToDo> findAllByIsUrgentIsTrue();
+  public List<ToDo> findAllByIsDoneIsTrue();
+  public List<ToDo> findAllByTitle(String title);
 
 }

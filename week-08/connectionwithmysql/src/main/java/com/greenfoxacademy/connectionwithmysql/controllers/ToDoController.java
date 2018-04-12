@@ -2,7 +2,6 @@ package com.greenfoxacademy.connectionwithmysql.controllers;
 
 import com.greenfoxacademy.connectionwithmysql.models.ToDo;
 import com.greenfoxacademy.connectionwithmysql.repositories.ToDoRepository;
-import com.greenfoxacademy.connectionwithmysql.services.ToDoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,9 +13,6 @@ public class ToDoController {
 
   @Autowired
   ToDoRepository toDoRepository;
-  @Autowired
-  ToDo todo;
-
 
   @RequestMapping(value = {"", "/", "/list"})
   public String list(@RequestParam(value = "active", required = false) String active, Model model) {

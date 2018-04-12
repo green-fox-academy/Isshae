@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update page</title>
+    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="col-md-12">
+    <div class="text-center">
+        <h1>Update ToDo!</h1>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="text-center">
+        <form style="padding: 30px" action="#" th:action="@{'/update'}" method="post">
+            <label for="title">Todo Title:</label>
+            <input type="text" id="title" name="title"/>
+            <label for="urgent">Urgent</label>
+            <input type="checkbox" id="urgent" name="urgent">
+            <label for="done">Done</label>
+            <input type="checkbox" id="done" name="done">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -6,13 +6,21 @@
     <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
-<h1>Add new ToDO!</h1>
+<div class="col-md-12">
+    <div class="text-center">
+        <h1>Add new ToDO!</h1>
+    </div>
+</div>
 
-<form action="#" th:action="@{/addnewtodo}" method="post">
-    <label for="todo">ToDo task:</label>
-    <input type="text" id="todo" name="todo"/>
-    <input type="submit" value="Submit"/>
-</form>
+<div class="col-md-12">
+    <div class="text-center">
+        <form style="padding: 30px" action="#" th:action="@{/addnewtodo}" method="post">
+            <label for="todo">ToDo task:</label>
+            <input type="text" id="todo" name="todo"/>
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
+</div>
 
 
 <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
