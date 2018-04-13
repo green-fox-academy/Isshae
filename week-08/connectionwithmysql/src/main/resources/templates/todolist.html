@@ -18,7 +18,7 @@
             <div class="text-right">
                 <h3>Search in todos!</h3>
                 <div class="text-left">
-                    <input type="button" class="btn btn-primary" value="Add new Assignee!"
+                    <input type="button" class="btn btn-primary" value="To Assignees!"
                            onclick="location.href = 'http://localhost:8080/assigneelist';">
                 </div>
                 <form style="padding: 5px 30px 30px" th:action="@{/filter}" method="post">
@@ -50,7 +50,7 @@
                 <td th:text="${todo.isDone()}"></td>
 
                 <td><a style="width: 70% ; padding: 8px 4px" type="button" class="btn btn-xs btn-warning"
-                       th:text="Update" th:href="'/update'"></a></td>
+                       th:text="Update" th:href="'/update/' + ${todo.id}"></a></td>
                 <td><a style="width: 70%; padding: 8px 4px" type="button" class="btn btn-xs btn-danger"
                        th:text="Delete" th:href="'/' + ${todo.id}"></a></td>
 
@@ -63,7 +63,7 @@
     <div class="row">
         <div class="col-md-3">
             <input type="button" class="btn btn-success" value="Add new todo!"
-                   onclick="location.href = 'http://localhost:8080/addnewtodo';">
+                   onclick="location.href = 'http://localhost:8080/addnew';">
         </div>
     </div>
 </div>

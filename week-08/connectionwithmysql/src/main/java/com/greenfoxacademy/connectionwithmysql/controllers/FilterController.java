@@ -14,12 +14,12 @@ public class FilterController {
   ToDoRepository toDoRepository;
 
   @PostMapping("/filter")
-  public String filter(@ModelAttribute(name = "title")String title,Model model){
-                      // @ModelAttribute(name = "urgent")Boolean urgent,
-                      // @ModelAttribute(name = "done")Boolean done, Model model){
+  public String filter(@ModelAttribute(name = "title") String title, Model model) {
+    // @ModelAttribute(name = "urgent")Boolean urgent,
+    // @ModelAttribute(name = "done")Boolean done, Model model){
 
-    model.addAttribute("todos",toDoRepository.findAllByTitle(title));
-   // model.addAttribute("todos",toDoRepository.findAllByIsUrgentIsTrue());
+    model.addAttribute("todos", toDoRepository.findAllByTitle(title));
+    // model.addAttribute("todos",toDoRepository.findAllByIsUrgentIsTrue());
     //model.addAttribute("todos",toDoRepository.findAllByIsDoneIsTrue());
 
 

@@ -23,13 +23,15 @@
             <td><a style="width: 70% ; padding: 8px 4px" type="button" class="btn btn-xs btn-warning"
                    th:text="Update" th:href="'/updateassignee'"></a></td>
             <td><a style="width: 70%; padding: 8px 4px" type="button" class="btn btn-xs btn-danger"
-                   th:text="Delete" th:href="'/assigneelist' + ${assignee.id}"></a></td>
+                   th:text="Delete" th:href="'/assigneelist/' + ${assignee.id}"></a></td>
         </tr>
         </tbody>
     </table>
     <div class="text-left">
         <input type="button" class="btn btn-info" value="Back"
                onclick="location.href = 'http://localhost:8080/';">
+            <input type="button" class="btn btn-primary" value="Add new Assignee!"
+                   onclick="location.href = 'http://localhost:8080/addnewassignee';">
     </div>
 </div>
 </body>

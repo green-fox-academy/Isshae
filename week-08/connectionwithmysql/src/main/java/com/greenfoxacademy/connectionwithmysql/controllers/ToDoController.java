@@ -24,17 +24,6 @@ public class ToDoController {
     return "todolist";
   }
 
-  @GetMapping("/addnewtodo")
-  public String addNewTodo() {
-    return "addnewtodo";
-  }
-
-  @PostMapping("/addnewtodo")
-  public String addNewTodo(@ModelAttribute(name = "todo") String todo) {
-    toDoRepository.save(new ToDo(todo));
-    return "redirect:/";
-  }
-
   @GetMapping(value = {"/{id}"})
   public String deleteTodo(@PathVariable(name = "id") Long id) {
     toDoRepository.deleteById(id);
