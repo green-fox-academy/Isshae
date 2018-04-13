@@ -20,26 +20,26 @@ public class UpdateTodoOrAssigneeController {
   @Autowired
   AssigneeRepository assigneeRepository;
 
-  @GetMapping("/update/{id}")
+  @GetMapping("/update-todo/{id}")
   public String viewUpdateTudo(@PathVariable(name = "id") Long id, Model model) {
     model.addAttribute("todo", todoRepository.findOneById(id));
     return "update-todo";
   }
 
-  @PostMapping("/update/{id}")
+  @PostMapping("/update-todo/{id}")
   public String update(ToDo toDo) {
     todoRepository.save(toDo);
     return "redirect:/";
   }
 
-  @GetMapping("/updateassignee")
+  @GetMapping("/update-assignee")
   public String viewUpdateAssignee() {
     return "update-assignee";
   }
 
-  @PostMapping("/updateassignee")
+  @PostMapping("/update-assignee")
   public String updateAssignee(@PathVariable(name = "assignee") Assignee assignee) {
     assigneeRepository.save(assignee);
-    return "redirect:/assigneelist";
+    return "redirect:/assignee-list";
   }
 }

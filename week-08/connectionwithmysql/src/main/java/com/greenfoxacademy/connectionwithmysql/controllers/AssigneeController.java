@@ -12,15 +12,15 @@ public class AssigneeController {
   @Autowired
   AssigneeRepository assigneeRepository;
 
-  @GetMapping("/assigneelist")
+  @GetMapping("/assignee-list")
   public String viewAssigneeList(Model model) {
     model.addAttribute("assignees", assigneeRepository.findAll());
     return "assignee-list";
   }
 
-  @GetMapping(value = {"/assigneelist/{id}"})
+  @GetMapping(value = {"/assignee-list/{id}"})
   public String deleteaAssignee(@PathVariable(name = "id") Long id) {
     assigneeRepository.deleteById(id);
-    return "redirect:/assigneelist";
+    return "redirect:/assignee-list";
   }
 }

@@ -20,7 +20,7 @@ public class ToDoController {
     } else {
       model.addAttribute("todos", todoRepository.findAll());
     }
-    return "to-dolist";
+    return "todo-list";
   }
 
   @GetMapping(value = {"/{id}"})

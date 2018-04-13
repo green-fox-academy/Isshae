@@ -13,7 +13,7 @@
 </div>
 <div class="col-md-12">
     <div class="text-center">
-        <form th:object="${todo}" style="padding: 30px" action="#" th:action="'/update/'+*{id}" method="post">
+        <form th:object="${todo}" style="padding: 30px" action="#" th:action="'/update-todo/'+*{id}" method="post">
             <label for="title">Todo Title:</label>
             <input type="text" id="title" th:field="*{title}"/>
             <label for="urgent">Urgent</label>

@@ -18,24 +18,24 @@ public class AddNewTodoOrAssigneeController {
   @Autowired
   TodoRepository todoRepository;
 
-  @GetMapping("/addnewassignee")
+  @GetMapping("/add-new-assignee")
   public String viewAddNewAssigneePage() {
     return "add-new-assignee";
   }
 
-  @PostMapping("/addnewassignee")
+  @PostMapping("/add-new-assignee")
   public String addNewAssignee(@ModelAttribute(name = "name") String name,
                                @ModelAttribute(name = "email") String email) {
     assigneeRepository.save(new Assignee(name, email));
-    return "redirect:/assigneelist";
+    return "redirect:/assignee-list";
   }
 
-  @GetMapping("/addnew")
+  @GetMapping("/add-new-todo")
   public String viewAddNewTodo() {
-    return "add-new";
+    return "add-new-todo";
   }
 
-  @PostMapping("/addnew")
+  @PostMapping("/add-new-todo")
   public String addNewTodo(@ModelAttribute(name = "todo") String todo) {
     todoRepository.save(new ToDo(todo));
     return "redirect:/";

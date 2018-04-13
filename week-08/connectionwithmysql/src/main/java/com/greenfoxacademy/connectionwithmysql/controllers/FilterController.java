@@ -17,6 +17,6 @@ public class FilterController {
   @PostMapping("/filter")
   public String filter(@ModelAttribute(name = "title") String title, Model model) {
     model.addAttribute("todos", todoRepository.findAllByTitle(title));
-    return "to-dolist";
+    return "todo-list";
   }
 }
