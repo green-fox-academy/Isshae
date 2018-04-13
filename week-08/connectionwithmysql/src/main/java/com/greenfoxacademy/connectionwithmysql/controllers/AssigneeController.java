@@ -15,7 +15,7 @@ public class AssigneeController {
   @GetMapping("/assigneelist")
   public String viewAssigneeList(Model model) {
     model.addAttribute("assignees", assigneeRepository.findAll());
-    return "assigneelist";
+    return "assignee-list";
   }
 
   @GetMapping(value = {"/assigneelist/{id}"})

@@ -3,7 +3,7 @@ package com.greenfoxacademy.connectionwithmysql.controllers;
 import com.greenfoxacademy.connectionwithmysql.models.Assignee;
 import com.greenfoxacademy.connectionwithmysql.models.ToDo;
 import com.greenfoxacademy.connectionwithmysql.repositories.AssigneeRepository;
-import com.greenfoxacademy.connectionwithmysql.repositories.ToDoRepository;
+import com.greenfoxacademy.connectionwithmysql.repositories.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class AddController {
+public class AddNewTodoOrAssigneeController {
 
   @Autowired
   AssigneeRepository assigneeRepository;
   @Autowired
-  ToDoRepository toDoRepository;
+  TodoRepository todoRepository;
 
   @GetMapping("/addnewassignee")
   public String viewAddNewAssigneePage() {
-    return "addnewassignee";
+    return "add-new-assignee";
   }
 
   @PostMapping("/addnewassignee")
@@ -32,12 +32,12 @@ public class AddController {
 
   @GetMapping("/addnew")
   public String viewAddNewTodo() {
-    return "addnew";
+    return "add-new";
   }
 
   @PostMapping("/addnew")
   public String addNewTodo(@ModelAttribute(name = "todo") String todo) {
-    toDoRepository.save(new ToDo(todo));
+    todoRepository.save(new ToDo(todo));
     return "redirect:/";
   }
 }

@@ -13,13 +13,13 @@
 </div>
 <div class="col-md-12">
     <div class="text-center">
-        <form th:object="${todo}" style="padding: 30px" action="#" th:action="'/update'" method="post">
+        <form th:object="${todo}" style="padding: 30px" action="#" th:action="'/update/'+*{id}" method="post">
             <label for="title">Todo Title:</label>
-            <input type="text" id="title" th:field="${todo.title}"/>
+            <input type="text" id="title" th:field="*{title}"/>
             <label for="urgent">Urgent</label>
-            <input type="checkbox" id="urgent" th:field="${todo.urgent}" th:default="${todo.urgent}">
+            <input type="checkbox" id="urgent" th:field="*{urgent}" th:default="*{urgent}">
             <label for="done">Done</label>
-            <input type="checkbox" id="done" th:field="${todo.done}" th:default="${todo.done}">
+            <input type="checkbox" id="done" th:field="*{done}" th:default="*{done}">
             <input type="submit" value="Submit">
         </form>
     </div>

@@ -5,15 +5,11 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface ToDoRepository extends CrudRepository<ToDo, Long> {
+public interface TodoRepository extends CrudRepository<ToDo, Long> {
 
-  public List<ToDo> findAllByIsDoneIsFalse();
+  List<ToDo> findAllByTitle(String title);
 
-  public List<ToDo> findAllByIsUrgentIsTrue();
-
-  public List<ToDo> findAllByIsDoneIsTrue();
-
-  public List<ToDo> findAllByTitle(String title);
+  List<ToDo> findAllByIsDoneIsFalse();
 
   ToDo findOneById(Long id);
 }
