@@ -11,16 +11,15 @@ public class Greeter {
   private String error;
 
   public Greeter(String name, String title) {
-    this.name = name;
-    this.title = title;
+    this.welcome_message = "Oh, hi there " + name + ", my dear " + title + "!";
   }
 
-  public Greeter(String welcome_message) {
-    this.welcome_message = welcome_message;
+  public Greeter(String name) {
+    this.error = "Please provide a name!";
   }
 
   public Greeter() {
-    this.error = "Please provide a name!";
+    this.error = "Please provide a title!";
   }
 
   //  "welcome_message": "Oh, hi there Petike, my dear student!"
