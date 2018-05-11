@@ -24,7 +24,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
   @Override
   public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-    holder.title.setText(oneBook.getDocs().get(position).getTitle());
+    if (oneBook.getDocs() != null) {
+      holder.title.setText(oneBook.getDocs().get(position).getTitle());
+    } else {
+      holder.title.setText(oneBook.getWorks().get(position).getTitle());
+    }
   }
 
   @Override
@@ -34,7 +38,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
   public class MyViewHolder extends RecyclerView.ViewHolder {
 
-    TextView  title;
+    TextView title;
 
     public MyViewHolder(View itemView) {
       super(itemView);

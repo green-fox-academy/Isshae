@@ -34,14 +34,15 @@ public class SearchBySubjectActivity extends AppCompatActivity {
     final RadioButton horror = (RadioButton) findViewById(R.id.horror);
     final RadioButton fiction = (RadioButton) findViewById(R.id.fiction);
 
-    selectedType = sciFi.getText().toString();
-
-    if (horror.isSelected()) {
+    if (horror.isChecked()) {
       selectedType = horror.getText().toString();
-    } else if (fiction.isSelected()){
+    } else if (fiction.isChecked()) {
       selectedType = fiction.getText().toString();
+    } else {
+      selectedType = sciFi.getText().toString();
     }
-    recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+
+    recyclerView = (RecyclerView) findViewById(R.id.recyclerView2);
     layoutManager = new LinearLayoutManager(this);
     recyclerView.setLayoutManager(layoutManager);
     recyclerView.setHasFixedSize(true);

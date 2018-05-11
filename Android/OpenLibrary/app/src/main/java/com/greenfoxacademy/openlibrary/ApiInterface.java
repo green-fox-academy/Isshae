@@ -13,7 +13,7 @@ public interface ApiInterface {
   @GET("/search.json")
   Call<Book> getBooks(@Query(value = "author") String author);
 
-  @Headers({"Content-Type: application/json", "Accept: application/json"})
-  @GET("/subjects/{subject}.json")
-  Call<Book> getBooksBySubject(@Path(value = "subject") String subject);
+
+  @GET("/subjects/{name}.json")
+  Call<Book> getBooksBySubject(@Path(value = "name") String subject);
 }
